@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+<head>
+<title>Bless Gathering</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+<link rel="stylesheet" href="sepaimap/scripts/Leaflet/leaflet.css">
+
+<script src="senpaimap/scripts/Leaflet/leaflet.js"></script>
+
+</head>
+<body style="height: 100%;">
+
+<div id="map" style="width: 100%; height: 100%; background: #000000;"></div>
+
+<script type="text/javascript">
+// Variables
+var mapSW = [0, 16128],
+	mapNE = [16128, 0];
+  
+// Declare Map Object
+var map = L.map('map').setView([0, 0], 1);
+
+
+// Reference the tiles
+L.tileLayer('senpaimap/maps/world/{z}/{x}/{y}.png', {
+	minZoom: 3,
+	maxZoom: 6,
+	noWarp: true,
+}).addTo(map);
+
+map.setMaxBounds(new L.LatLngBounds(
+	map.unproject(mapSW, map.getMaxZoom()),
+	map.unproject(mapNE, map.getMaxZoom())
+));
+
+// Markers and Popups
+
+//To get Lat Lng
+var marker = L.marker([0, 0], {
+	draggable: true,
+}).addTo(map);
+marker.bindPopup('<b>:3<b>').openPopup();
+
+var marker_chili = L.marker([-45.54405, -28.237867]).addTo(map);
+
+
+
+
+
+
+marker.on('dragend', function(e) {
+	//alert(marker.getLatLng().toString());
+	marker.getPopup().setContent('Here :3    ' + marker.getLatLng().toString()).openOn(map);
+});
+
+</script>
+
+
+</body>
+</html>
