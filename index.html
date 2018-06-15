@@ -116,7 +116,7 @@ marker.on('dragend', function(e) {
 
 
 //Chili
-var chili = L.marker([-45.54405, -28.237867]).addTo(map);
+var chili = L.marker([-45.54405, -28.237867]);
 
 
 //Saffron
@@ -150,10 +150,6 @@ var lg_chili = L.layerGroup([chili]);
 var overlays = {
 	"Chili" : lg_chili,
 }
-
-
-
-
 
 // Layer Control
 L.control.layers(null, overlays).addTo(map);
