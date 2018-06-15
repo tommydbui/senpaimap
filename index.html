@@ -5,9 +5,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-<link rel="stylesheet" href="https://tommydbui.github.io/senpaimap/sepaimap/scripts/Leaflet/leaflet.css">
+<link rel="stylesheet" href="scripts/Leaflet/leaflet.css">
 
-<script src="https://tommydbui.github.io/senpaimap/senpaimap/scripts/Leaflet/leaflet.js"></script>
+<script src="scripts/Leaflet/leaflet.js"></script>
 
 </head>
 <body style="height: 100%;">
@@ -24,7 +24,7 @@ var map = L.map('map').setView([0, 0], 1);
 
 
 // Reference the tiles
-L.tileLayer('https://tommydbui.github.io/senpaimap/senpaimap/maps/world/{z}/{x}/{y}.png', {
+L.tileLayer('maps/world/{z}/{x}/{y}.png', {
 	minZoom: 3,
 	maxZoom: 6,
 	noWarp: true,
