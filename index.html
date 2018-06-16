@@ -109,6 +109,21 @@ var stone = L.icon({
     popupAnchor: [-3, -50],
 })
 
+var saffron = L.icon({
+    iconUrl: 'images/saffron.png',
+    iconSize: [50, 50],
+    iconAnchor: [27, 50],
+    popupAnchor: [-3, -50],
+})
+
+var parsley = L.icon({
+    iconUrl: 'images/parsley.png',
+    iconSize: [50, 50],
+    iconAnchor: [27, 50],
+    popupAnchor: [-3, -50],
+})
+
+
 
 //Elites
 var elite = L.icon({
@@ -206,18 +221,23 @@ var barley0 = L.marker([-54.826008, -37.727051], {icon: barley,});
 
 //Corn
 var corn0 = L.marker([-48.180739, -35.683594], {icon: corn,});
+var corn1 = L.marker([-49.738682, -37.067871], {icon: corn,});
+var corn2 = L.marker([-49.696062, -36.782227], {icon: corn,});
+var corn3 = L.marker([-49.425267, -37.287598], {icon: corn,});
+var corn4 = L.marker([-49.738682, -37.946777], {icon: corn,});
+var corn5 = L.marker([-49.724479, -37.814941], {icon: corn,});
 //Tomato
 
 
 //Parsley
-var parsley0 = L.marker([-48.04871, -36.848145]);
-var parsley1 = L.marker([-48.136767, -37.243652]);
-var parsley2 = L.marker([-47.650588, -40.891113]);
-var parsley3 = L.marker([-47.532038, -41.044922]);
-var parsley4 = L.marker([-46.164614, -43.461914]);
-var parsley5 = L.marker([-51.027576, -37.858887]);
-var parsley6 = L.marker([-50.35948, -36.364746]);
-var parsley7 = L.marker([-49.624946, -37.397461]);
+var parsley0 = L.marker([-48.04871, -36.848145], {icon: parsley,});
+var parsley1 = L.marker([-48.136767, -37.243652], {icon: parsley,});
+var parsley2 = L.marker([-47.650588, -40.891113], {icon: parsley,});
+var parsley3 = L.marker([-47.532038, -41.044922], {icon: parsley,});
+var parsley4 = L.marker([-46.164614, -43.461914], {icon: parsley,});
+var parsley5 = L.marker([-51.027576, -37.858887], {icon: parsley,});
+var parsley6 = L.marker([-50.35948, -36.364746], {icon: parsley,});
+var parsley7 = L.marker([-49.624946, -37.397461], {icon: parsley,});
 
 //Cabbage
 
@@ -230,9 +250,9 @@ var chili = L.marker([-45.54405, -28.237867], {icon: Chili,});
 
 
 //Saffron
-var saffron0 = L.marker([-50.134664, -35.705566]);
-var saffron1 = L.marker([-49.993615, -36.97998]);
-var saffron2 = L.marker([-52.656394, -41.77002]);
+var saffron0 = L.marker([-50.134664, -35.705566], {icon: saffron,});
+var saffron1 = L.marker([-49.993615, -36.97998], {icon: saffron,});
+var saffron2 = L.marker([-52.656394, -41.77002], {icon: saffron,});
 
 //Coconut
 
@@ -285,7 +305,7 @@ elite8.bindPopup('<H3>Level 41<H3>');
 
 
 // Layer Groups
-var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, elite0, elite1, elite2,]);
+var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, elite0, elite1, elite2, corn1, corn2, corn3, corn4, corn5,]);
 
 
 var lg_iron = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11,]);
@@ -296,7 +316,7 @@ var lg_meteorite = L.layerGroup([meteorite0, meteorite1, meteorite2, meteorite3,
 var lg_stone = L.layerGroup([stone0,]);
 var lg_cotton = L.layerGroup([cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7,]);
 var lg_barley = L.layerGroup([barley0,]);
-var lg_corn = L.layerGroup([corn0,]);
+var lg_corn = L.layerGroup([corn0, corn1, corn2, corn3, corn4, corn5,]);
 var lg_parsley = L.layerGroup([parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7,]);
 var lg_chili = L.layerGroup([chili,]);
 var lg_saffron = L.layerGroup([saffron0, saffron1, saffron2,]);
