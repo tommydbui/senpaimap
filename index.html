@@ -38,6 +38,7 @@ map.setMaxBounds(new L.LatLngBounds(
 
 
 //Icons
+//Mats
 var Pickpoint = L.icon({
     iconUrl: 'images/Mark_Here.png',
     iconSize: [50, 50],
@@ -109,8 +110,13 @@ var stone = L.icon({
 })
 
 
-
-
+//Elites
+var elite = L.icon({
+    iconUrl: 'images/elite.png',
+    iconSize: [50, 50],
+    iconAnchor: [27, 50],
+    popupAnchor: [-3, -50],
+})
 
 
 // Markers and Popups
@@ -120,13 +126,13 @@ var marker = L.marker([0, 0], {
 	draggable: true,
 	icon: Pickpoint,
 }).addTo(map);
-marker.bindPopup('<UL> <LI>Drag marker to where resource is and pm Tommy on discord the longitude and latitude as well as what the item is to have it added. <LI>To show the resourse that you are looking for go to the overlay icon at the top right and pick what you need. <LI>If you dont see the resource that you are looking for then that either means I havent found it yet to add it. How this will help you guys gather stuff easier.<UL> <P ALIGN=Center> <H3>Enjoy! :3<H3>').openPopup();
+marker.bindPopup('<UL> <LI>Drag marker to where resource is and pm Tommy on discord the longitude and latitude as well as what the item is to have it added. <LI>To show the resourse that you are looking for go to the overlay icon at the top right and pick what you need. <LI>If you dont see the resource that you are looking for then that either means I havent found it yet to add it. How this will help you guys gather stuff easier.<LI>Click on the elite icon you see what level it is.<UL> <P ALIGN=Center> <H3>Enjoy! :3<H3>').openPopup();
 
 
 
 marker.on('dragend', function(e) {
 	//alert(marker.getLatLng().toString());
-	marker.getPopup().setContent('Here :3    ' + marker.getLatLng().toString()).openOn(map);
+	marker.getPopup().setContent('Here :3 ' + marker.getLatLng().toString()).openOn(map);
 });
 
 
@@ -254,8 +260,21 @@ var moonweed4 = L.marker([-49.696062, -38.056641], {icon: moonweed,});
 //Blueberry
 
 
+
+//Elites
+var elite0 = L.marker([-52.736292, -43.461914], {icon: elite,}, map.getMaxZoom());
+elite0.bindPopup('<H3>Level 17<H3>');
+var elite1 = L.marker([-54.342149, -33.815918], {icon: elite,}, map.getMaxZoom());
+elite1.bindPopup('<H3>Level 21<H3>');
+var elite2 = L.marker([-50.751717, 49.242783], {icon: elite,}, map.getMaxZoom());
+elite2.bindPopup('<H3>Level 43<H3>');
+
+
+
+
+
 // Layer Groups
-var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4,]);
+var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, elite0, elite1, elite2,]);
 
 
 var lg_iron = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11,]);
@@ -271,6 +290,8 @@ var lg_parsley = L.layerGroup([parsley0, parsley1, parsley2, parsley3, parsley4,
 var lg_chili = L.layerGroup([chili,]);
 var lg_saffron = L.layerGroup([saffron0, saffron1, saffron2,]);
 var lg_moonweed = L.layerGroup([moonweed0, moonweed1, moonweed2, moonweed3, moonweed4,]);
+
+var lg_elite = L.layerGroup([elite0, elite1, elite2,]);
 
 
 var overlays = {
@@ -288,6 +309,7 @@ var overlays = {
 	"Chili" : lg_chili,
 	"Saffron" : lg_saffron,
 	"Moonweed" : lg_moonweed,
+	"Elites" : lg_elite,
 }
 
 // Layer Control
