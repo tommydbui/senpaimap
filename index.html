@@ -45,8 +45,26 @@ var Pickpoint = L.icon({
     popupAnchor: [-3, -50],
 });
 
+var Meteorite = L.icon({
+    iconUrl: 'images/Meteorite.png',
+    iconSize: [50, 50],
+    iconAnchor: [27, 50],
+    popupAnchor: [-3, -50],
+})
 
+var Cotton = L.icon({
+    iconUrl: 'images/Cotton.png',
+    iconSize: [50, 50],
+    iconAnchor: [27, 50],
+    popupAnchor: [-3, -50],
+})
 
+var Chili = L.icon({
+    iconUrl: 'images/Chili.png',
+    iconSize: [50, 50],
+    iconAnchor: [27, 50],
+    popupAnchor: [-3, -50],
+})
 
 
 
@@ -89,21 +107,22 @@ marker.on('dragend', function(e) {
 
 
 //Meteorite
-var meteorite0 = L.marker([-19.248922, -41.44043]);
-var meteorite1 = L.marker([-18.20848, -41.000977]);
-var meteorite2 = L.marker([-17.623082, -40.473633]);
-var meteorite3 = L.marker([-16.467695, -40.078125]);
-var meteorite4 = L.marker([-16.551962, -39.243164]);
-var meteorite5 = L.marker([-16.488765, -37.946777]);
-var meteorite6 = L.marker([-16.720385, -36.518555]);
-var meteorite7 = L.marker([-16.762468, -36.210938]);
+var meteorite0 = L.marker([-19.248922, -41.44043], {icon: Meteorite,});
+var meteorite1 = L.marker([-18.20848, -41.000977], {icon: Meteorite,});
+var meteorite2 = L.marker([-17.623082, -40.473633], {icon: Meteorite,});
+var meteorite3 = L.marker([-16.467695, -40.078125], {icon: Meteorite,});
+var meteorite4 = L.marker([-16.551962, -39.243164], {icon: Meteorite,});
+var meteorite5 = L.marker([-16.488765, -37.946777], {icon: Meteorite,});
+var meteorite6 = L.marker([-16.720385, -36.518555], {icon: Meteorite,});
+var meteorite7 = L.marker([-16.762468, -36.210938], {icon: Meteorite,});
 
 //Stone
 
 
 //Cotton
-var cotton0 = L.marker([-20.200346, -41.594238]);
-var cotton1 = L.marker([-18.229351, -40.913086]);
+var cotton0 = L.marker([-20.200346, -41.594238], {icon: Cotton,});
+var cotton1 = L.marker([-18.229351, -40.913086], {icon: Cotton,});
+
 //Rice
 
 
@@ -123,7 +142,7 @@ var cotton1 = L.marker([-18.229351, -40.913086]);
 
 
 //Chili
-var chili = L.marker([-45.54405, -28.237867]);
+var chili = L.marker([-45.54405, -28.237867], {icon: Chili,});
 
 
 //Saffron
