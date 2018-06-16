@@ -73,7 +73,7 @@ marker.on('dragend', function(e) {
 
 
 //Add Markers
-//var Name = L.marker([0, 0]).addTo(map);
+//var Name = L.marker([0, 0]);
 
 
 //Iron
@@ -89,14 +89,21 @@ marker.on('dragend', function(e) {
 
 
 //Meteorite
-
+var meteorite0 = L.marker([-19.248922, -41.44043]);
+var meteorite1 = L.marker([-18.20848, -41.000977]);
+var meteorite2 = L.marker([-17.623082, -40.473633]);
+var meteorite3 = L.marker([-16.467695, -40.078125]);
+var meteorite4 = L.marker([-16.551962, -39.243164]);
+var meteorite5 = L.marker([-16.488765, -37.946777]);
+var meteorite6 = L.marker([-16.720385, -36.518555]);
+var meteorite7 = L.marker([-16.762468, -36.210938]);
 
 //Stone
 
 
 //Cotton
-
-
+var cotton0 = L.marker([-20.200346, -41.594238]);
+var cotton1 = L.marker([-18.229351, -40.913086]);
 //Rice
 
 
@@ -142,12 +149,24 @@ var chili = L.marker([-45.54405, -28.237867]);
 
 // Layer Groups
 
-
-
+//var lg_iron = L.layerGroup([iron]);
+//var lg_copper = L.layerGroup([copper]);
+//var lg_silver = L.layerGroup([silver]);
+//var lg_gold = L.layerGroup([gold]);
+var lg_meteorite = L.layerGroup([meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7]);
+//var lg_stone = L.layerGroup([stone]);
+var lg_cotton = L.layerGroup([cotton0, cotton1]);
 var lg_chili = L.layerGroup([chili]);
 
 
 var overlays = {
+	//"Iron" : lg_iron,
+	//"Copper" : lg_copper,
+	//"Silver" : lg_silver,
+	//"Gold" : lg_gold,
+	"Meteorite" : lg_meteorite,
+	//"Stone" : lg_stone,
+	"Cotton" : lg_cotton,
 	"Chili" : lg_chili,
 }
 
