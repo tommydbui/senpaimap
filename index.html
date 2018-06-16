@@ -20,7 +20,7 @@ var mapSW = [0, 16128],
 	mapNE = [16128, 0];
   
 // Declare Map Object
-var map = L.map('map').setView([0, 0], 1);
+var map = L.map('map').setView([-28.929444, -9.584198], 2);
 
 
 // Reference the tiles
@@ -76,7 +76,7 @@ var Chili = L.icon({
 // Markers and Popups
 
 //To get Lat Lng
-var marker = L.marker([0, 0], {
+var marker = L.marker([-28.929444, -9.584198], {
 	draggable: true,
 	icon: Pickpoint,
 }).addTo(map);
