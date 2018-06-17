@@ -18,17 +18,24 @@
 // Variables
 var mapSW = [0, 16128],
 	mapNE = [16128, 0];
+
   
 // Declare Map Object
 var map = L.map('map').setView([0, 0], 1);
 
+var southWest = L.latLng(-83.039212, -159.807129),
+    northEast = L.latLng(82.717309, 159.668427),
+    mybounds = L.latLngBounds(southWest, northEast);
+
 
 // Reference the tiles
 L.tileLayer('maps/world/{z}/{x}/{y}.png', {
-	minZoom: 3,
+    minZoom: 2,
 	maxZoom: 6,
-	noWarp: true,
+	noWrap: true,
 }).addTo(map);
+
+
 
 map.setMaxBounds(new L.LatLngBounds(
 	map.unproject(mapSW, map.getMaxZoom()),
@@ -41,86 +48,93 @@ map.setMaxBounds(new L.LatLngBounds(
 //Mats
 var Pickpoint = L.icon({
     iconUrl: 'images/Mark_Here.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 });
 
 var Meteorite = L.icon({
     iconUrl: 'images/meteorites.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var Cotton = L.icon({
     iconUrl: 'images/cotton.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var Chili = L.icon({
     iconUrl: 'images/chili.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var barley = L.icon({
     iconUrl: 'images/barley.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var corn = L.icon({
     iconUrl: 'images/corn.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var iron = L.icon({
     iconUrl: 'images/iron.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var moonweed = L.icon({
     iconUrl: 'images/moonweed.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var silver = L.icon({
     iconUrl: 'images/silver.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var stone = L.icon({
     iconUrl: 'images/stone.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var saffron = L.icon({
     iconUrl: 'images/saffron.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 var parsley = L.icon({
     iconUrl: 'images/parsley.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
+})
+
+var tomato = L.icon({
+    iconUrl: 'images/tomato.png',
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 
@@ -128,9 +142,9 @@ var parsley = L.icon({
 //Elites
 var elite = L.icon({
     iconUrl: 'images/elite.png',
-    iconSize: [50, 50],
-    iconAnchor: [27, 50],
-    popupAnchor: [-3, -50],
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
 })
 
 
@@ -183,6 +197,12 @@ var silver5 = L.marker([-55.015426, -36.474609], {icon: silver,});
 var silver6 = L.marker([-54.559323, -35.419922], {icon: silver,});
 var silver7 = L.marker([-54.572062, -35.244141], {icon: silver,});
 var silver8 = L.marker([-54.316523, -33.881836], {icon: silver,});
+var silver9 = L.marker([-58.286395, -55.195313], {icon: silver,});
+var silver10 = L.marker([-58.286395, -55.415039], {icon: silver,});
+var silver11 = L.marker([-58.470721, -56.57959], {icon: silver,});
+var silver12 = L.marker([-58.008098, -57.875977], {icon: silver,});
+var silver13 = L.marker([-57.692406, -58.40332], {icon: silver,});
+var silver14 = L.marker([-58.367156, -60.095215], {icon: silver,});
 
 
 //Gold
@@ -197,9 +217,22 @@ var meteorite4 = L.marker([-16.551962, -39.243164], {icon: Meteorite,});
 var meteorite5 = L.marker([-16.488765, -37.946777], {icon: Meteorite,});
 var meteorite6 = L.marker([-16.720385, -36.518555], {icon: Meteorite,});
 var meteorite7 = L.marker([-16.762468, -36.210938], {icon: Meteorite,});
+var meteorite8 = L.marker([51.76784, -35.661621], {icon: Meteorite,});
+var meteorite9 = L.marker([51.713416, -34.035645], {icon: Meteorite,});
+var meteorite10 = L.marker([50.944584, -34.40918], {icon: Meteorite,});
+var meteorite11 = L.marker([50.443513, -34.606934], {icon: Meteorite,});
+var meteorite12 = L.marker([50.373496, -34.73877], {icon: Meteorite,});
+var meteorite13 = L.marker([50.555325, -34.848633], {icon: Meteorite,});
+var meteorite14 = L.marker([51.303145, -38.276367], {icon: Meteorite,});
+var meteorite15 = L.marker([51.835778, -42.626953], {icon: Meteorite,});
+var meteorite16 = L.marker([51.248163, -44.055176], {icon: Meteorite,});
+var meteorite17 = L.marker([50.999929, -44.143066], {icon: Meteorite,});
+var meteorite18 = L.marker([50.875311, -44.604492], {icon: Meteorite,});
 
 //Stone
 var stone0 = L.marker([-54.863963, -35.925293], {icon: stone,});
+var stone1 = L.marker([-58.390197, -54.602051], {icon: stone,});
+var stone2 = L.marker([-58.112714, -57.722168], {icon: stone,});
 
 //Cotton
 var cotton0 = L.marker([-20.200346, -41.594238], {icon: Cotton,});
@@ -210,6 +243,7 @@ var cotton4 = L.marker([-48.429201, -40.187988], {icon: Cotton,});
 var cotton5 = L.marker([-48.166085, -40.253906], {icon: Cotton,});
 var cotton6 = L.marker([-49.95122, -37.990723], {icon: Cotton,});
 var cotton7 = L.marker([-51.917168, -41.022949], {icon: Cotton,});
+var cotton8 = L.marker([52.066, -34.145508], {icon: Cotton,});
 
 //Rice
 
@@ -226,8 +260,10 @@ var corn2 = L.marker([-49.696062, -36.782227], {icon: corn,});
 var corn3 = L.marker([-49.425267, -37.287598], {icon: corn,});
 var corn4 = L.marker([-49.738682, -37.946777], {icon: corn,});
 var corn5 = L.marker([-49.724479, -37.814941], {icon: corn,});
-//Tomato
 
+
+//Tomato
+var tomato0 = L.marker([-58.309489, -61.45752], {icon: tomato,});
 
 //Parsley
 var parsley0 = L.marker([-48.04871, -36.848145], {icon: parsley,});
@@ -246,7 +282,7 @@ var parsley7 = L.marker([-49.624946, -37.397461], {icon: parsley,});
 
 
 //Chili
-var chili = L.marker([-45.54405, -28.237867], {icon: Chili,});
+var chili0 = L.marker([-45.54405, -28.237867], {icon: Chili,});
 
 
 //Saffron
@@ -272,6 +308,12 @@ var moonweed1 = L.marker([-45.460131, -44.648437], {icon: moonweed,});
 var moonweed2 = L.marker([-50.471491, -37.133789], {icon: moonweed,});
 var moonweed3 = L.marker([-49.368066, -37.749023], {icon: moonweed,});
 var moonweed4 = L.marker([-49.696062, -38.056641], {icon: moonweed,});
+var moonweed5 = L.marker([50.652943, -33.640137], {icon: moonweed,});
+var moonweed6 = L.marker([50.666872, -34.101563], {icon: moonweed,});
+var moonweed7 = L.marker([50.736455, -36.584473], {icon: moonweed,});
+var moonweed8 = L.marker([51.358062, -38.320312], {icon: moonweed,});
+var moonweed9 = L.marker([51.358062, -39.375], {icon: moonweed,});
+var moonweed10 = L.marker([51.658927, -41.132813], {icon: moonweed,});
 
 
 //Cranberry
@@ -287,9 +329,9 @@ elite0.bindPopup('<H3>Level 17<H3>');
 var elite1 = L.marker([-54.342149, -33.815918], {icon: elite,}, map.getMaxZoom());
 elite1.bindPopup('<H3>Level 21<H3>');
 var elite2 = L.marker([-50.751717, 49.242783], {icon: elite,}, map.getMaxZoom());
-elite2.bindPopup('<H3>Level 43<H3>');
+elite2.bindPopup('<H3>Level 43, Walks around.<H3>');
 var elite3 = L.marker([-20.166672, -37.086411], {icon: elite,}, map.getMaxZoom());
-elite3.bindPopup('<H3>Level 35<H3>');
+elite3.bindPopup('<H3>Level 35, Walks around.<H3>');
 var elite4 = L.marker([-4.49343, -24.832792], {icon: elite,}, map.getMaxZoom());
 elite4.bindPopup('<H3>Level 33<H3>');
 var elite5 = L.marker([-16.859584, -47.540503], {icon: elite,}, map.getMaxZoom());
@@ -300,29 +342,43 @@ var elite7 = L.marker([-58.647297, -70.9443], {icon: elite,}, map.getMaxZoom());
 elite7.bindPopup('<H3>Level 39<H3>');
 var elite8 = L.marker([-54.480611, -49.368868], {icon: elite,}, map.getMaxZoom());
 elite8.bindPopup('<H3>Level 41<H3>');
+var elite9 = L.marker([-58.893296, -60.996094], {icon: elite,}, map.getMaxZoom());
+elite9.bindPopup('<H3>Level 41, Walks around.<H3>');
+var elite10 = L.marker([51.6998, -42.802734], {icon: elite,}, map.getMaxZoom());
+elite10.bindPopup('<H3>Level 44, Walks around.<H3>');
+var elite11 = L.marker([52.106505, -39.528809], {icon: elite,}, map.getMaxZoom());
+elite11.bindPopup('<H3>Level 44<H3>');
+var elite12 = L.marker([49.253073, -33.019409], {icon: elite,}, map.getMaxZoom());
+elite12.bindPopup('<H3>Level 44<H3>');
+var elite13 = L.marker([49.09045, -32.761574], {icon: elite,}, map.getMaxZoom());
+elite13.bindPopup('<H3>Level 44<H3>');
+var elite14 = L.marker([49.065094, -33.218622], {icon: elite,}, map.getMaxZoom());
+elite14.bindPopup('<H3>Level 44<H3>');
+
 
 
 
 
 // Layer Groups
-var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, elite0, elite1, elite2, corn1, corn2, corn3, corn4, corn5,]);
+var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili0, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, elite0, elite1, elite2, corn1, corn2, corn3, corn4, corn5, silver9, silver10, silver11, silver12, silver13, silver14, stone1, stone2, meteorite8, meteorite9, meteorite10, meteorite11, meteorite12, meteorite13, meteorite14, meteorite15, meteorite16, meteorite17, meteorite18, moonweed5, moonweed6, moonweed7, moonweed8, moonweed9, moonweed10,cotton8, elite9, elite10, elite11, elite12, elite13, elite14,]);
 
 
 var lg_iron = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11,]);
 //var lg_copper = L.layerGroup([copper]);
-var lg_silver = L.layerGroup([silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8,]);
+var lg_silver = L.layerGroup([silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, silver9, silver10, silver11, silver12, silver13, silver14,]);
 //var lg_gold = L.layerGroup([gold]);
-var lg_meteorite = L.layerGroup([meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7,]);
-var lg_stone = L.layerGroup([stone0,]);
-var lg_cotton = L.layerGroup([cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7,]);
+var lg_meteorite = L.layerGroup([meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, meteorite8, meteorite9, meteorite10, meteorite11, meteorite12, meteorite13, meteorite14, meteorite15, meteorite16, meteorite17, meteorite18,]);
+var lg_stone = L.layerGroup([stone0, stone1, stone2,]);
+var lg_cotton = L.layerGroup([cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, cotton8,]);
 var lg_barley = L.layerGroup([barley0,]);
 var lg_corn = L.layerGroup([corn0, corn1, corn2, corn3, corn4, corn5,]);
+var lg_tomato = L.layerGroup([tomato0,]);
 var lg_parsley = L.layerGroup([parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7,]);
-var lg_chili = L.layerGroup([chili,]);
+var lg_chili = L.layerGroup([chili0,]);
 var lg_saffron = L.layerGroup([saffron0, saffron1, saffron2,]);
-var lg_moonweed = L.layerGroup([moonweed0, moonweed1, moonweed2, moonweed3, moonweed4,]);
+var lg_moonweed = L.layerGroup([moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, moonweed5, moonweed6, moonweed7, moonweed8, moonweed9, moonweed10,]);
 
-var lg_elite = L.layerGroup([elite0, elite1, elite2, elite3, elite4, elite5, elite6, elite7, elite8,]);
+var lg_elite = L.layerGroup([elite0, elite1, elite2, elite3, elite4, elite5, elite6, elite7, elite8, elite9, elite10, elite11, elite12, elite13, elite14,]);
 
 
 var overlays = {
@@ -336,6 +392,7 @@ var overlays = {
 	"Cotton" : lg_cotton,
 	"Barley" : lg_barley,
 	"Corn" : lg_corn,
+    "Tomato" : lg_tomato,
 	"Parsley" : lg_parsley,
 	"Chili" : lg_chili,
 	"Saffron" : lg_saffron,
