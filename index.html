@@ -161,7 +161,7 @@ marker.bindPopup('<UL> <LI>Drag marker to where resource is and pm Tommy on disc
 
 marker.on('dragend', function(e) {
 	//alert(marker.getLatLng().toString());
-	marker.getPopup().setContent('Here :3 ' + marker.getLatLng().toString()).openOn(map);
+	marker.getPopup().setContent('' + marker.getLatLng().toString()).openOn(map);
 });
 
 
