@@ -137,6 +137,14 @@ var tomato = L.icon({
     popupAnchor: [-3, -30],
 })
 
+var mint = L.icon({
+    iconUrl: 'images/mint.png',
+    iconSize: [25, 30],
+    iconAnchor: [15, 30],
+    popupAnchor: [-3, -30],
+})
+
+
 
 
 //Elites
@@ -203,6 +211,17 @@ var silver11 = L.marker([-58.470721, -56.57959], {icon: silver,});
 var silver12 = L.marker([-58.008098, -57.875977], {icon: silver,});
 var silver13 = L.marker([-57.692406, -58.40332], {icon: silver,});
 var silver14 = L.marker([-58.367156, -60.095215], {icon: silver,});
+var silver15 = L.marker([-54.661124, -43.967285], {icon: silver,});
+var silver16 = L.marker([-54.149567, -43.769531], {icon: silver,});
+var silver17 = L.marker([-54.533833, -43.527832], {icon: silver,});
+var silver18 = L.marker([-54.72462, -43.857422], {icon: silver,});
+var silver19 = L.marker([-55.924586, -42.736816], {icon: silver,});
+var silver20 = L.marker([-56.072035, -42.60498], {icon: silver,});
+var silver21 = L.marker([-56.279961, -43.198242], {icon: silver,});
+var silver22 = L.marker([-54.914514, -42.077637], {icon: silver,});
+var silver23 = L.marker([-54.572062, -40.847168], {icon: silver,});
+var silver24 = L.marker([-54.54658, -40.341797], {icon: silver,});
+var silver25 = L.marker([-54.342149, -40.36377], {icon: silver,});
 
 
 //Gold
@@ -233,6 +252,9 @@ var meteorite18 = L.marker([50.875311, -44.604492], {icon: Meteorite,});
 var stone0 = L.marker([-54.863963, -35.925293], {icon: stone,});
 var stone1 = L.marker([-58.390197, -54.602051], {icon: stone,});
 var stone2 = L.marker([-58.112714, -57.722168], {icon: stone,});
+var stone3 = L.marker([-54.559323, -43.857422], {icon: stone,});
+var stone4 = L.marker([-54.41893, -43.769531], {icon: stone,});
+var stone5 = L.marker([-55.065787, -44.165039], {icon: stone,});
 
 //Cotton
 var cotton0 = L.marker([-20.200346, -41.594238], {icon: Cotton,});
@@ -251,6 +273,11 @@ var cotton8 = L.marker([52.066, -34.145508], {icon: Cotton,});
 
 //Barley
 var barley0 = L.marker([-54.826008, -37.727051], {icon: barley,});
+var barley1 = L.marker([-54.406143, -43.483887], {icon: barley,});
+var barley2 = L.marker([-54.977614, -44.384766], {icon: barley,});
+var barley3 = L.marker([-55.078367, -41.44043], {icon: barley,});
+var barley4 = L.marker([-54.800685, -41.11084], {icon: barley,});
+var barley5 = L.marker([-54.635697, -39.594727], {icon: barley,});
 
 
 //Corn
@@ -274,12 +301,14 @@ var parsley4 = L.marker([-46.164614, -43.461914], {icon: parsley,});
 var parsley5 = L.marker([-51.027576, -37.858887], {icon: parsley,});
 var parsley6 = L.marker([-50.35948, -36.364746], {icon: parsley,});
 var parsley7 = L.marker([-49.624946, -37.397461], {icon: parsley,});
+var parsley8 = L.marker([-54.686534, -41.660156], {icon: parsley,});
+var parsley9 = L.marker([-54.826008, -35.925293], {icon: parsley,});
 
 //Cabbage
 
 
 //Mint
-
+var mint0 = L.marker([-54.939766, -41.726074], {icon: mint,});
 
 //Chili
 var chili0 = L.marker([-45.54405, -28.237867], {icon: Chili,});
@@ -360,20 +389,21 @@ elite14.bindPopup('<H3>Level 44, 3 elites here.<H3>');
 
 
 // Layer Groups
-var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili0, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, elite0, elite1, elite2, corn1, corn2, corn3, corn4, corn5, silver9, silver10, silver11, silver12, silver13, silver14, stone1, stone2, meteorite8, meteorite9, meteorite10, meteorite11, meteorite12, meteorite13, meteorite14, meteorite15, meteorite16, meteorite17, meteorite18, moonweed5, moonweed6, moonweed7, moonweed8, moonweed9, moonweed10,cotton8, elite9, elite10, elite11, elite12, elite13, elite14,]);
+var lg_all = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11, meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, corn0, parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, chili0, saffron0, saffron1, saffron2,silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, stone0, barley0, moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, elite0, elite1, elite2, corn1, corn2, corn3, corn4, corn5, silver9, silver10, silver11, silver12, silver13, silver14, stone1, stone2, meteorite8, meteorite9, meteorite10, meteorite11, meteorite12, meteorite13, meteorite14, meteorite15, meteorite16, meteorite17, meteorite18, moonweed5, moonweed6, moonweed7, moonweed8, moonweed9, moonweed10,cotton8, elite9, elite10, elite11, elite12, elite13, elite14, silver15, silver16, silver17, silver18, silver19, silver20, silver21, silver22, silver23, silver24, silver25, stone3, stone4, stone5, parsley8, parsley9, barley1, barley2, barley3, barley4, barley5, mint0,]);
 
 
 var lg_iron = L.layerGroup([iron0, iron1, iron2, iron3, iron4, iron5, iron6, iron7, iron8, iron9, iron10, iron11,]);
 //var lg_copper = L.layerGroup([copper]);
-var lg_silver = L.layerGroup([silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, silver9, silver10, silver11, silver12, silver13, silver14,]);
+var lg_silver = L.layerGroup([silver0, silver1, silver2, silver3, silver4, silver5, silver6, silver7, silver8, silver9, silver10, silver11, silver12, silver13, silver14, silver15, silver16, silver17, silver18, silver19, silver20, silver21, silver22, silver23, silver24, silver25,]);
 //var lg_gold = L.layerGroup([gold]);
 var lg_meteorite = L.layerGroup([meteorite0, meteorite1, meteorite2, meteorite3, meteorite4, meteorite5, meteorite6, meteorite7, meteorite8, meteorite9, meteorite10, meteorite11, meteorite12, meteorite13, meteorite14, meteorite15, meteorite16, meteorite17, meteorite18,]);
-var lg_stone = L.layerGroup([stone0, stone1, stone2,]);
+var lg_stone = L.layerGroup([stone0, stone1, stone2, stone3, stone4, stone5,]);
 var lg_cotton = L.layerGroup([cotton0, cotton1, cotton2, cotton3, cotton4, cotton5, cotton6, cotton7, cotton8,]);
-var lg_barley = L.layerGroup([barley0,]);
+var lg_barley = L.layerGroup([barley0, barley1, barley2, barley3, barley4, barley5,]);
 var lg_corn = L.layerGroup([corn0, corn1, corn2, corn3, corn4, corn5,]);
 var lg_tomato = L.layerGroup([tomato0,]);
-var lg_parsley = L.layerGroup([parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7,]);
+var lg_parsley = L.layerGroup([parsley0, parsley1, parsley2, parsley3, parsley4, parsley5, parsley6, parsley7, parsley8, parsley9,]);
+var lg_mint = L.layerGroup([mint0,]);
 var lg_chili = L.layerGroup([chili0,]);
 var lg_saffron = L.layerGroup([saffron0, saffron1, saffron2,]);
 var lg_moonweed = L.layerGroup([moonweed0, moonweed1, moonweed2, moonweed3, moonweed4, moonweed5, moonweed6, moonweed7, moonweed8, moonweed9, moonweed10,]);
@@ -394,6 +424,7 @@ var overlays = {
 	"Corn" : lg_corn,
     "Tomato" : lg_tomato,
 	"Parsley" : lg_parsley,
+	"Mint" : lg_mint,
 	"Chili" : lg_chili,
 	"Saffron" : lg_saffron,
 	"Moonweed" : lg_moonweed,
